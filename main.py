@@ -2,12 +2,14 @@ from stats import count_words, count_characters, restructure_character_count
 
 
 def get_book_text(filepath: str) -> str:
+    """Function to extract a string from a text file."""
     with open(filepath) as f:
         file_contents = f.read()
     return file_contents
 
 
 def main() -> None:
+    # Main program workflow
     path: str = "./books/frankenstein.txt"
     book_text: str = get_book_text(path)
     num_words: int = count_words(book_text)

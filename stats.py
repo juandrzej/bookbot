@@ -32,4 +32,5 @@ def sort_on(input_dict: dict[str, str | int]) -> int:
 
 
 def sort_list(input_list: list[dict[str, str | int]]) -> list[dict[str, str | int]]:
+    """Function that sorts a list by 'num' key in each dictionary entry."""
     return sorted(input_list, reverse=True, key=sort_on)
