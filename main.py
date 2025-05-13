@@ -1,3 +1,4 @@
+import sys
 from stats import count_words, count_characters, restructure_character_count
 
 
@@ -10,7 +11,12 @@ def get_book_text(filepath: str) -> str:
 
 def main() -> None:
     # Main program workflow
-    path: str = "./books/frankenstein.txt"
+    try:
+        path: str = sys.argv[1]
+    except IndexError:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
     book_text: str = get_book_text(path)
     num_words: int = count_words(book_text)
     num_chars: dict[str, int] = count_characters(book_text)
